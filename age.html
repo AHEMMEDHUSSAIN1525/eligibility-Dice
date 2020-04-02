@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <title>Eligible</title>
+     </head>
+<body>
+
+<h2>JavaScript Prompt</h2>
+<h4>First click on <b style="color:lightseagreen;">click Here </b>
+  button then enter your age and gender to check your eligibility</h4>
+<button onclick="myFunction()">click Here</button>
+
+<p id="eligibility"></p>
+
+<script>
+
+function myFunction(){
+var text;
+var age = prompt('How old are you?');
+var gender= prompt('Enter your gender');
+
+if(gender == "male" && age >= 18 && age <21){
+    text= "You are a "+' '+gender+' '+ "you are Eligible to vote" + " but you are not eligible to marriage";
+}else if((gender == "male" && age >= 21) || (gender == "female" && age > 18)){
+     text=  "You are a"+' '+gender+' '+"you are Eligible to vote and you are eligible to marry";
+}else{
+     text= ("Not eligible to vote or not Eligible to marry");
+}
+document.getElementById("eligibility").innerHTML = text;
+}
+</script>
+</body>
+</html>
