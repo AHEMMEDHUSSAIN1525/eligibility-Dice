@@ -17,16 +17,20 @@
 function myFunction(){
 var text;
 var age = prompt('How old are you?');
-var gender= prompt('Enter your gender');
+var gender= prompt('Enter your gender').toLowerCase();
+let message=document.getElementById("eligibility");
 
 if(gender == "male" && age >= 18 && age <21){
     text= "You are a "+' '+gender+' '+ "you are Eligible to vote" + " but you are not eligible to marriage";
+    message.style.color='blue';
 }else if((gender == "male" && age >= 21) || (gender == "female" && age > 18)){
      text=  "You are a"+' '+gender+' '+"you are Eligible to vote and you are eligible to marry";
+     message.style.color='green';
 }else{
      text= ("Not eligible to vote or not Eligible to marry");
+     message.style.color='red';
 }
-document.getElementById("eligibility").innerHTML = text;
+      message.innerHTML = text;
 }
 </script>
 </body>
