@@ -8,15 +8,27 @@
 <div id="die1" class="dice">0</div>
 <button onclick="rollDice()">Roll Dice</button>
 <h2 id="status" style="clear:left;"></h2>
+<h2 id="repeated" style="clear:left;"></h2>
 
 <script>
+	let randomArray=[];
 	function rollDice(){
 		var die1 = document.getElementById("die1");
 		var status = document.getElementById("status");
-		var d1 = Math.floor(Math.random() * 6) + 1;
-		var diceTotal = d1;
-		die1.innerHTML = d1;
-		status.innerHTML = "You rolled "+diceTotal+".";
+	    let d1=generateRandom();
+
+		if(randomArray.indexOf(d1)==-1){
+			randomArray.push(d1);
+			die1.innerHTML=d1;
+			status.innerHTML="you rolled" +d1+ ",";
+		}
+		else{
+			die1.innerHTML="Number exists";
+		}
+		repeated.innerHTML=JSON.stringify(randomArray);
+	}
+	function generateRandom(){
+		return Math.floor(Math.random()*6)+1;
 	}
 	</script>
 </body>
