@@ -1,4 +1,4 @@
-function OddEven(){
+function EvenOdd(){
     var num = document.getElementById('num').value;
     if ( num % 2 == 0) {
         document.getElementById('Even').innerHTML = num + ' is a Even number';
